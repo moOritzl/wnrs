@@ -1,8 +1,8 @@
-/* Grundlegende Stildefinitionen */
+/* === Globales Layout === */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,66 +13,102 @@ body {
     background-size: cover;
 }
 
-/* Überschrift */
+/* === Hauptcontainer für zentrierte Inhalte === */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+
+/* === Überschrift === */
 h1 {
     font-size: 2rem;
     margin: 1rem 0;
     text-align: center;
-    color: #333333;
+    color: #333;
 }
 
-/* Level-Buttons */
+/* === Level-Buttons === */
 .level-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-.level-buttons button,
-.next-button {
-    padding: 0.8rem 1.5rem;
+.level-buttons button {
+    padding: 0.7rem 1.2rem;
     font-size: 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #FF9F1C;
+    background-color: #ff704d;
     color: white;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 90px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background-color 0.2s ease;
 }
 
-.level-buttons button:hover,
-.next-button:hover {
-    background-color: #FF6B6B;
+.level-buttons button:nth-child(2) {
+    background-color: #ffa64d;
 }
 
-/* Kartenanzeige */
+.level-buttons button:nth-child(3) {
+    background-color: #ffc04d;
+}
+
+.level-buttons button:hover {
+    filter: brightness(1.05);
+}
+
+/* === Kartenanzeige === */
 .card-display {
-    margin: 1rem 0;
+    width: 100%;
+    max-width: 500px;
     padding: 1.5rem;
-    background: #FFF8E1;
+    margin: 1rem 0;
+    background: #fdf6e3;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
     text-align: center;
-    font-size: 1.2rem;
-    min-height: 100px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
 }
 
-/* Ablagestapel */
+/* === Nächste Karte Button === */
+.next-button {
+    margin: 0.5rem 0;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffa726;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.next-button:hover {
+    background-color: #fb8c00;
+}
+
+/* === Ablagestapel === */
 .discard-pile {
     margin-top: 2rem;
-    max-width: 600px;
     width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
 .discard-pile h3 {
-    font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #333333;
+    font-size: 1rem;
+    color: #333;
 }
 
 .discard-pile ul {
@@ -82,15 +118,15 @@ h1 {
 }
 
 .discard-pile li {
-    background: #FFE0B2;
+    background: #ffe0b2;
     padding: 0.5rem;
     margin: 0.3rem 0;
     border-radius: 6px;
     font-size: 0.95rem;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 600px) {
+/* === Responsive Optimierungen === */
+@media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
     }
@@ -102,11 +138,11 @@ h1 {
 
     .level-buttons button,
     .next-button {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         padding: 0.6rem 1rem;
     }
 
     .discard-pile li {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
